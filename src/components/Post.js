@@ -18,8 +18,10 @@ export default function Post({data, aumentarLikes}) {
 
   const handleClick = () => {
     setCantLikes(cantLikes + 1);
-    aumentarLikes();
-    console.log("Se sumo 1 like al posteo: " + data.titulo);
+    if(cantLikes < 10){
+      aumentarLikes()
+      console.log("Se sumo 1 like al posteo: " + data.titulo);
+    }
   }
 
   return (
